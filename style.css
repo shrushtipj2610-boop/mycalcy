@@ -5,11 +5,14 @@
 }
 
 body{
+    body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
 }
 
 
@@ -44,14 +47,14 @@ button{
     height: 62px;
     border: none;
     border-radius: 12px;
-    background: #3b3b57;
-    color: #ffffff;
+    background: #2e2e3a;
+    color: #e1d3d3;
     font-size: 1.3rem;
     cursor: pointer;
 }
 
 button:hover{
-    background-color: #4a4a6a;
+    background-color: #8d8da7;
 }
 
 button:active{
@@ -59,15 +62,15 @@ button:active{
 }
 
 .op, .equals{
-    background: #ff9600;
+    background: #f65978;
 }
 
 .op:hover, .equals:hover{
-    background: #ffab33;
+    background: #f1508b;
 }
 
 .fn{
-    background: #5a5a7a;
+    background: #4b4b61;
 }
 
 .zero, .equals{

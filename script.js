@@ -1,36 +1,29 @@
-// console.log("Hello JS")
-const display = document.getElementById("display")
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll(".buttons button");
 
-// console.log(display.value)
-// display.value = 55
+function press(value) {
 
-const buttons = document.querySelectorAll(".buttons button")
-// console.log(buttons.length)
-
-function press(value){
-    if(value === 'C'){
-        display.value = '' 
-    }else if(value === 'DEL'){
-        display.value = display.value.slice(0,-1)
+    if (value === "Clear") {
+        display.value = "";
     }
-    else if(value === '='){
-        display.value = eval(display.value)
+    else if (value === "DEL") {
+        display.value = display.value.slice(0, -1);
     }
-    
-    else{
-        display.value = display.value + value
+    else if (value === "=") {
+        try {
+            display.value = eval(display.value);
+        }
+        catch {
+            display.value = "Error";
+        }
     }
-    
-}
-function calculate(){
-    const answer= eval(display.value)
-    display.value = answer
+    else {
+        display.value += value;
+    }
 }
 
-for(let i=0; i<buttons.length; i++){
-    buttons[i].addEventListener('click', function(){
-        press(buttons[i].textContent)
-    })  
-}
-
-// console.log(buttons[4].textContent)
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        press(button.textContent);
+    });
+});
